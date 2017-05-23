@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let p of peopleList">
+      <ion-item >
+        <ion-avatar item-left>
+          <img src="{{p.picture.thumbnail}}">
+        </ion-avatar>
+        <h3>{{p.name.title}} {{p.name.first}} {{p.name.last}}</h3>
+        <p>{{p.email}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="delete(p)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
